@@ -3,8 +3,12 @@
 }
 
 #title {
-
-    margin: 0vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25vw;
+    height: 20vh;
+    margin-top: 5vh;
 }
 
 .title-box{
@@ -19,21 +23,24 @@
 .main-container {
     /* border: 1px solid red; */
     height: 100vh;
-    background-color:#23262F;
+    background-color:#E0D0C1;
     position: relative;
 }
 
-.results {
+h1 {
     font-size: 2vw;
-    position: absolute;
-    padding-top: 10vh;
-    text-align: center;
     color:#F5F5F5;
+    margin-bottom: 2vh;
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.results {
+    position: absolute;
+    text-align: center;
+    height: 12vh;
     /* border: 1px solid blue; */
-    height: 10vh;
-    width: 20vw;
-    left: 40vw;
-    top: 20vh;
+    left: 42.5vw;
+    top: 30vh;
 }
 
 .flex {
@@ -41,11 +48,10 @@
 }
 
 .computer {
-    font-size: 2vw;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    color:#F5F5F5;
     /* border: 1px solid green; */
     height: 60vh;
     width: 50vw;
@@ -95,4 +101,8 @@ button {
   button:active {
     box-shadow: #D6D6E7 0 3px 7px inset;
     transform: translateY(2px);
+  }
+
+  .reset {
+    margin-left: 42.5vw;
   }

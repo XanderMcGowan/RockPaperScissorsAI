@@ -10,15 +10,24 @@ const genCom = () => {
   console.log(input)
   if (input >= 0 && input < 0.33) {
     computer = "paper"
+    setTimeout(() => {
     document.getElementById("computer").innerHTML = "paper"
+    }, 500)
+    document.getElementById("results").innerHTML = "..."
     return computer
   } else if (input > 0.33 && input < 0.66) {
     computer = "rock"
+    setTimeout(() => {
     document.getElementById("computer").innerHTML = "rock"
+    }, 500)
+    document.getElementById("results").innerHTML = "..."
     return computer
   } else {
     computer = "scissors"
+    setTimeout(() => {
     document.getElementById("computer").innerHTML = "scissors"
+    }, 500)
+    document.getElementById("results").innerHTML = "..."
     return computer
   }
   
@@ -27,36 +36,48 @@ const genCom = () => {
 
 const checkWinner = (human, computer) => {
   if (human == "rock" && computer == "scissors") {
+    setTimeout(() => {
     document.getElementById("results").innerHTML = "you win"
+  }, 1000)
     return
   } else if (human == "paper" && computer == "rock") {
-    document.getElementById("results").innerHTML = "you win"
+    setTimeout(() => {
+      document.getElementById("results").innerHTML = "you win"
+    }, 1000)
     return
   } else if (human == "scissors" && computer == "paper") {
-    document.getElementById("results").innerHTML = "you win"
+    setTimeout(() => {
+      document.getElementById("results").innerHTML = "you win"
+    }, 1000)
     return
   } else if (human == computer) {
-    document.getElementById("results").innerHTML = "tie game"
+    setTimeout(() => {
+      document.getElementById("results").innerHTML = "tie game"
+    }, 1000)
+    return
   }
     else {
-    document.getElementById("results").innerHTML = "computer wins"
+      setTimeout(() => {
+        document.getElementById("results").innerHTML = "computer wins"
+      }, 1000)
   }
 }
 
 const resetFunc = () => {
   computer = ""
   human = ""
-  document.getElementById("results").innerHTML = ""
-  document.getElementById("computer").innerHTML = "computer"
+  document.getElementById("results").innerHTML = "results"
+  document.getElementById("computer").innerHTML = "..."
 }
 
 
 
 const gameFunc = (str) => {
 human = str
-console.log("human " + human)
+document.getElementById("computer").innerHTML = "..."
+// console.log("human " + human)
 genCom()
-console.log(computer)
+// console.log(computer)
 checkWinner(human, computer)
 return
 }
